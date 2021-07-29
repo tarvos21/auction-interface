@@ -55,7 +55,7 @@ const initialize = async () => {
     console.error(error)
   }
 
-  contractPayloadhex.value = '7f1ae49d8a574cb95b491d7ab7d5be6d02ab02a11ceb0b0200000009010006020609030f2204310805392807615708b801200ad801050cdd0126000001010102000007000202040100000300010000040201000206040101040107050101040204070801040108090101040203030304030503010c00020c0401080002060c0201060c010b0101080002060c04010b0101090002060c0b0101090003506464074163636f756e7405546f6b656e04696e6974046d696e740b64756d6d795f6669656c640e72656769737465725f746f6b656e0f646f5f6163636570745f746f6b656e0f6465706f7369745f746f5f73656c667f1ae49d8a574cb95b491d7ab7d5be6d0000000000000000000000000000000100020105010002000001060e00310338000e003801020102000006080e000a0138020c020e000b02380302008d03a11ceb0b020000000a010006020609030f3a04490c0555310786017a0880022006a002030aa302050ca80238000001010102000007000202040100000300010000040102010400050301000006010400020806010104010907010104020a010202040402050a0b0104010b0c010104020601040104040505050608070508050905010c000101020c04010501080002060c0201060c0208000900010b0101080002060c04010b0101090002060c0b0101090003414243074163636f756e7405546f6b656e04696e69740669735f616263046d696e740d746f6b656e5f616464726573730b64756d6d795f6669656c640e72656769737465725f746f6b656e0f646f5f6163636570745f746f6b656e0d69735f73616d655f746f6b656e0f6465706f7369745f746f5f73656c667f1ae49d8a574cb95b491d7ab7d5be6d0000000000000000000000000000000102011200020107010002000001060e00070038000e003801020101000001023802020202000009080e000a0138030c020e000b023804020301000001023805020000'
+  // contractPayloadhex.value = '7f1ae49d8a574cb95b491d7ab7d5be6d02ab02a11ceb0b0200000009010006020609030f2204310805392807615708b801200ad801050cdd0126000001010102000007000202040100000300010000040201000206040101040107050101040204070801040108090101040203030304030503010c00020c0401080002060c0201060c010b0101080002060c04010b0101090002060c0b0101090003506464074163636f756e7405546f6b656e04696e6974046d696e740b64756d6d795f6669656c640e72656769737465725f746f6b656e0f646f5f6163636570745f746f6b656e0f6465706f7369745f746f5f73656c667f1ae49d8a574cb95b491d7ab7d5be6d0000000000000000000000000000000100020105010002000001060e00310338000e003801020102000006080e000a0138020c020e000b02380302008d03a11ceb0b020000000a010006020609030f3a04490c0555310786017a0880022006a002030aa302050ca80238000001010102000007000202040100000300010000040102010400050301000006010400020806010104010907010104020a010202040402050a0b0104010b0c010104020601040104040505050608070508050905010c000101020c04010501080002060c0201060c0208000900010b0101080002060c04010b0101090002060c0b0101090003414243074163636f756e7405546f6b656e04696e69740669735f616263046d696e740d746f6b656e5f616464726573730b64756d6d795f6669656c640e72656769737465725f746f6b656e0f646f5f6163636570745f746f6b656e0d69735f73616d655f746f6b656e0f6465706f7369745f746f5f73656c667f1ae49d8a574cb95b491d7ab7d5be6d0000000000000000000000000000000102011200020107010002000001060e00070038000e003801020101000001023802020202000009080e000a0138030c020e000b023804020301000001023805020000'
 
   let onboarding
   try {
@@ -68,15 +68,15 @@ const initialize = async () => {
   let accountButtonsInitialized = false
 
   const accountButtons = [
-    getAccountsButton,
-    requestPermissionsButton,
-    getPermissionsButton,
+    // getAccountsButton,
+    // requestPermissionsButton,
+    // getPermissionsButton,
     sendButton,
     callContractButton,
-    deployButton,
-    tokenAddressButton,
-    personalSign,
-    personalSignVerify,
+    // deployButton,
+    // tokenAddressButton,
+    // personalSign,
+    // personalSignVerify,
   ]
 
   const isStarMaskConnected = () => accounts && accounts.length > 0
@@ -113,13 +113,13 @@ const initialize = async () => {
       }
       clearTextDisplays()
     } else {
-      getAccountsButton.disabled = false
-      requestPermissionsButton.disabled = false
-      getPermissionsButton.disabled = false
+      // getAccountsButton.disabled = false
+      // requestPermissionsButton.disabled = false
+      // getPermissionsButton.disabled = false
       sendButton.disabled = false
       callContractButton.disabled = false
-      deployButton.disabled = false
-      personalSign.disabled = false
+      // deployButton.disabled = false
+      // personalSign.disabled = false
     }
 
     if (!isStarMaskInstalled()) {
@@ -146,6 +146,7 @@ const initialize = async () => {
     }
     accountButtonsInitialized = true
 
+    /*
     getAccountsButton.onclick = async () => {
       try {
         const _accounts = await window.starcoin.request({
@@ -157,11 +158,13 @@ const initialize = async () => {
         getAccountsResults.innerHTML = `Error: ${err.message}`
       }
     }
+    */
 
     /**
      * Permissions
      */
 
+    /*
     requestPermissionsButton.onclick = async () => {
       try {
         permissionsResult.innerHTML = ''
@@ -188,6 +191,7 @@ const initialize = async () => {
         permissionsResult.innerHTML = `Error: ${err.message}`
       }
     }
+    */
 
     /**
      * Sending STC
@@ -294,6 +298,7 @@ const initialize = async () => {
      * Contract Interactions
      */
 
+    /*
     deployButton.onclick = async () => {
       let transactionHash
       contractStatus.innerHTML = 'Deploying'
@@ -330,10 +335,12 @@ const initialize = async () => {
         throw error
       }
     }
+    */
 
     /**
      * Personal Sign
      */
+    /*
     personalSign.onclick = async () => {
       const exampleMessage = 'Example `personal_sign` message 中文'
       try {
@@ -358,10 +365,12 @@ const initialize = async () => {
         personalSign.innerHTML = `Error: ${err.message}`
       }
     }
+    */
 
     /**
      * Personal Sign Verify
      */
+    /*
     personalSignVerify.onclick = async () => {
       try {
         const from = accounts[0]
@@ -380,14 +389,17 @@ const initialize = async () => {
         personalSignRecoverResult.innerHTML = `Error: ${err.message}`
       }
     }
+    */
   }
 
   function handleNewAccounts(newAccounts) {
     accounts = newAccounts
     accountsDiv.innerHTML = accounts
+    /*
     if (getAccountsResults.innerHTML) {
       getAccountsResults.innerHTML = accounts
     }
+    */
     if (isStarMaskConnected()) {
       initializeAccountButtons()
     }
@@ -395,7 +407,7 @@ const initialize = async () => {
   }
 
   function handleNewChain(chainId) {
-    chainIdDiv.innerHTML = chainId
+    chainIdDiv.innerHTML = parseInt(chainId, 16)
   }
 
   function handleNewNetwork(networkId) {
@@ -408,7 +420,7 @@ const initialize = async () => {
         method: 'chain.id',
       })
       handleNewChain(`0x${chainInfo.id.toString(16)}`)
-      handleNewNetwork(chainInfo.id)
+      handleNewNetwork(chainInfo.name)
     } catch (err) {
       console.error(err)
     }
